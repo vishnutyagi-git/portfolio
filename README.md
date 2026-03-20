@@ -35,6 +35,7 @@
 📱 Mobile-First Design
 
 📂 Project Structure
+
 my-portfolio/
 ├── app/
 ├── components/
@@ -42,6 +43,7 @@ my-portfolio/
 ├── styles/
 ├── package.json
 └── tailwind.config.js
+
 🖥️ Run Locally
 # Clone repository
 git clone https://github.com/vishnutyagi-git/my-portfolio.git
