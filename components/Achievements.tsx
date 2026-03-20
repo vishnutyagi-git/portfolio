@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiTrophy, FiAward, FiStar } from "react-icons/fi";
+import { FiZap, FiAward, FiStar } from "react-icons/fi";
 
 export default function Achievements() {
     const wins = [
@@ -8,7 +8,7 @@ export default function Achievements() {
             title: "Hackathon Finalist",
             event: "Internal University Hack",
             tag: "Finalist",
-            icon: <FiTrophy />,
+            icon: <FiZap />,
             glow: "group-hover:shadow-[0_0_30px_-10px_rgba(253,224,71,0.3)]"
         },
         {
