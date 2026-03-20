@@ -1,70 +1,24 @@
-<h1 align="center">🚀 Vishnu Tyagi — Developer Portfolio</h1>
+<h1 align="center">🚀 Vishnu Tyagi</h1>
 
 <p align="center">
-  ⚡ Full Stack Developer | 🤖 AIML Enthusiast | 🌐 Tech Explorer
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=26&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=600&lines=Full+Stack+Developer;AIML+Enthusiast;Building+Modern+Web+Experiences" />
 </p>
 
 <p align="center">
-  <a href="https://vishnutyagi.vercel.app/">🌍 Live Website</a> •
-  <a href="https://github.com/vishnutyagi-git">💻 GitHub</a>
+  <a href="https://vishnutyagi.vercel.app/">
+    <img src="https://img.shields.io/badge/🌐 Portfolio-Visit-blue?style=for-the-badge" />
+  </a>
+  <a href="https://github.com/vishnutyagi-git">
+    <img src="https://img.shields.io/github/followers/vishnutyagi-git?style=for-the-badge" />
+  </a>
+  <img src="https://img.shields.io/badge/Status-Open_to_Opportunities-success?style=for-the-badge" />
 </p>
 
 ---
 
-## ✨ About Me
+## 🧠 About Me
 
-Hey there! 👋  
-This is my personal portfolio — a digital space where I showcase my journey as a **developer, problem solver, and tech enthusiast**.
-
-From building interactive UI to exploring AI & cloud technologies, this website reflects everything I’m passionate about.
-
-💡 Built with performance, design, and user experience in mind.
-
----
-
-## 🔥 Highlights
-
-- ⚡ Fully responsive (mobile-first design)
-- 🎯 Clean & modern UI/UX
-- 🎬 Smooth animations using Framer Motion
-- 🌗 Dark / Light mode support
-- 🚀 Fast & optimized performance
-- 📂 Well-structured scalable codebase
-
----
-
-## 🧠 What You’ll Find Inside
-
-| Section | Description |
-|--------|------------|
-| 👨‍💻 About | My journey & introduction |
-| 🛠️ Skills | Tech stack & tools |
-| 💼 Projects | Real-world work with links |
-| 📜 Certifications | Verified achievements |
-| 🏆 Achievements | Milestones & recognition |
-| 📬 Contact | Easy ways to reach me |
-
----
-
-## 🛠️ Tech Stack
-
-<p>
-  💙 TypeScript <br/>
-  ⚛️ Next.js / React <br/>
-  🎨 Tailwind CSS <br/>
-  🎞️ Framer Motion <br/>
-  ☁️ Vercel Deployment
-</p>
-
----
-
-## 📁 Project Structure
-
-```bash
-my-portfolio/
-├── app/
-├── components/
-├── public/
-├── styles/
-├── package.json
-└── tailwind.config.js
+```diff
++ Full Stack Developer (Next.js / React)
++ Exploring AI/ML & Cloud Technologies
++ Passionate about building modern UI/UX
