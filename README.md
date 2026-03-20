@@ -5,37 +5,42 @@
 </p>
 
 <p align="center">
-  <a href="https://vishnutyagi.vercel.app/">
-    <img src="https://img.shields.io/badge/🌐 Portfolio-Visit-blue?style=for-the-badge" />
-  </a>
+  <img src="https://komarev.com/ghpvc/?username=vishnutyagi-git&label=Profile+Views&color=0e75b6&style=for-the-badge" />
   <a href="https://github.com/vishnutyagi-git">
     <img src="https://img.shields.io/github/followers/vishnutyagi-git?style=for-the-badge" />
   </a>
   <img src="https://img.shields.io/badge/Status-Open_to_Opportunities-success?style=for-the-badge" />
 </p>
 
+<p align="center">
+  <a href="https://vishnutyagi.vercel.app/">
+    <img src="https://img.shields.io/badge/🌐 Portfolio-Visit-blue?style=for-the-badge" />
+  </a>
+</p>
+
 ---
 
 ## 🧠 About Me
 
-
+```diff
 + Full Stack Developer (Next.js / React)
 + Exploring AI/ML & Cloud Technologies
-+ Passionate about building modern UI/UX
-
++ Passionate about clean UI & performance
 ⚡ Tech Arsenal
 <p align="center"> <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind,git,github,vercel" /> </p>
+
+
+
 🚀 Portfolio Features
 
-✨ Fully Responsive (Mobile + Tablet + Desktop)
-🎬 Smooth Animations (Framer Motion)
+✨ Fully Responsive
+🎬 Smooth Animations
 🌗 Dark / Light Mode
-⚡ Optimized Performance
-📂 Clean & Scalable Code
-📱 Mobile-First Design
+⚡ Fast Performance
+📱 Mobile Optimized
+
 
 📂 Project Structure
-
 my-portfolio/
 ├── app/
 ├── components/
@@ -44,42 +49,37 @@ my-portfolio/
 ├── package.json
 └── tailwind.config.js
 
-🖥️ Run Locally
-# Clone repository
-git clone https://github.com/vishnutyagi-git/my-portfolio.git
 
-# Enter folder
-cd my-portfolio
-
-# Install dependencies
-npm install
-
-# Run project
-npm run dev
 📊 GitHub Stats
+
 <p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=vishnutyagi-git&show_icons=true&theme=tokyonight" /> <img src="https://github-readme-streak-stats.herokuapp.com/?user=vishnutyagi-git&theme=tokyonight" /> </p>
+
+🐍 Contribution Snake
+
+<p align="center"> <img src="https://raw.githubusercontent.com/vishnutyagi-git/vishnutyagi-git/output/github-contribution-grid-snake.svg" /> </p>
+
 🏆 Achievements
 
-🏅 Continuous learner in AI & Cloud
+🏅 Active learner in AI & Cloud
 📈 Growing developer presence
 💡 Building real-world projects
 
 🔮 Future Goals
 
-🤖 AI-powered applications
+🤖 AI-powered apps
 
 ☁️ Cloud-native projects
 
-📱 Advanced UI/UX systems
+📱 Advanced UI systems
 
 🤝 Connect With Me
-<p align="center"> <a href="mailto:your-email@example.com"> <img src="https://img.shields.io/badge/Email-Me-red?style=for-the-badge" /> </a> <a href="https://vishnutyagi.vercel.app/"> <img src="https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge" /> </a> <a href="https://github.com/vishnutyagi-git"> <img src="https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge" /> </a> </p>
-⭐ Support
 
-If you like this project:
+<p align="center"> <a href="mailto:your-email@example.com"> <img src="https://img.shields.io/badge/Email-Me-red?style=for-the-badge" /> </a> <a href="https://vishnutyagi.vercel.app/"> <img src="https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge" /> </a> <a href="https://github.com/vishnutyagi-git"> <img src="https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge" /> </a> </p>
+
+⭐ Support
 
 ⭐ Star this repo
 🍴 Fork it
 💬 Share feedback
 
-<p align="center"> 🔥 <b>Build. Learn. Improve. Repeat.</b> 🔥 </p>
+<p align="center"> 🔥 <b>Code. Build. Dominate.</b> 🔥 </p>'''
