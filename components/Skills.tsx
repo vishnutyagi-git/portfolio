@@ -46,6 +46,10 @@ export default function Skills() {
         <section id="skills" className="relative mx-auto max-w-6xl px-6 py-32 overflow-hidden">
             <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/10 blur-[150px] pointer-events-none" />
             <div className="absolute right-0 bottom-0 -z-10 h-[400px] w-[400px] rounded-full bg-pink-500/10 blur-[150px] pointer-events-none" />
+            <div className="absolute left-0 top-10 -z-10 h-[280px] w-[280px] rounded-full bg-cyan-500/10 blur-[130px] pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-12 -z-10 h-36 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_25%,rgba(34,211,238,0.08),transparent_0,transparent_22%),radial-gradient(circle_at_85%_20%,rgba(217,70,239,0.1),transparent_0,transparent_24%)] pointer-events-none" />
+            <div className="absolute inset-x-8 top-16 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
 
             <motion.div
                 variants={containerVariants}
@@ -58,10 +62,10 @@ export default function Skills() {
                     variants={headlineVariants}
                     className="text-5xl md:text-6xl font-bold tracking-tight mb-20 text-white"
                 >
-                    Technical <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 text-glow-purple drop-shadow-lg">Arsenal</span>
+                    Technical <span className="inline-block bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent drop-shadow-lg">Arsenal</span>
                 </motion.h2>
 
-                <motion.div className="flex flex-wrap justify-center gap-4 md:gap-5 max-w-4xl">
+                <motion.div className="flex max-w-4xl flex-wrap justify-center gap-4 md:gap-5">
                     {skills.map((skill, index) => (
                         <motion.div
                             key={index}
@@ -119,4 +123,3 @@ export default function Skills() {
         </section>
     );
 }
-

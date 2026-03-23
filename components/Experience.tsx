@@ -61,9 +61,12 @@ export default function Experience() {
 
     return (
         <section id="experience" className="relative mx-auto max-w-6xl px-6 py-32">
-            {/* Background Atmosphere */}
             <div className="absolute right-0 top-1/4 -z-10 h-[500px] w-[500px] rounded-full bg-blue-500/5 blur-[140px] pointer-events-none" />
             <div className="absolute left-0 bottom-0 -z-10 h-[500px] w-[500px] rounded-full bg-orange-500/5 blur-[140px] pointer-events-none" />
+            <div className="absolute left-1/3 top-8 -z-10 h-32 w-64 rounded-full bg-cyan-400/10 blur-[90px] pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-8 -z-10 h-40 bg-gradient-to-r from-transparent via-blue-500/[0.05] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_10%_75%,rgba(249,115,22,0.08),transparent_0,transparent_24%),radial-gradient(circle_at_90%_20%,rgba(59,130,246,0.08),transparent_0,transparent_24%)] pointer-events-none" />
+            <div className="absolute inset-x-16 top-14 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
 
             <motion.div
                 variants={containerVariants}
@@ -72,7 +75,6 @@ export default function Experience() {
                 viewport={{ once: true, margin: "-100px" }}
                 className="flex flex-col"
             >
-                {/* Updated Styled Heading */}
                 <motion.h2
                     variants={itemVariants}
                     className="text-5xl md:text-6xl font-bold tracking-tight mb-20 text-white"
@@ -88,13 +90,12 @@ export default function Experience() {
                                 variants={itemVariants}
                                 className="relative group pl-10 md:pl-14"
                             >
-                                {/* Timeline Node */}
                                 <div className="absolute -left-[11px] top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#0a0a0a] ring-2 ring-white/10">
                                     <div className={`h-2 w-2 rounded-full ${item.theme.dot} transition-all duration-500 group-hover:scale-150 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]`} />
                                 </div>
 
-                                {/* Content Card */}
-                                <div className={`group relative rounded-3xl border border-white/5 bg-white/[0.02] p-8 backdrop-blur-sm transition-all duration-500 ${item.theme.border} ${item.theme.glow} hover:-translate-y-1`}>
+                                <div className={`group relative overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02] p-8 backdrop-blur-sm transition-all duration-500 ${item.theme.border} ${item.theme.glow} hover:-translate-y-1`}>
+                                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-60" />
                                     <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start mb-6">
                                         <div>
                                             <h3 className="text-2xl font-bold text-white mb-2">

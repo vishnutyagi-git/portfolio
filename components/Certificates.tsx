@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { FiAward, FiExternalLink } from 'react-icons/fi';
 
 export default function Certificates() {
-    
     const certsData = [
         {
             id: 1,
@@ -14,8 +13,7 @@ export default function Certificates() {
             date: "Nov 2025",
             details: "20 hours of comprehensive cloud training covering AWS core services, security, architecture, pricing, and support.",
             image: "/aws-badge.png",
-            // Bina space wala link
-            link: "/certificates/aws-cloud-foundation.pdf", 
+            link: "/certificates/aws-cloud-foundation.pdf",
             theme: {
                 border: "group-hover:border-[#FF9900]/40",
                 glow: "from-[#FF9900]/20 to-orange-500/10",
@@ -119,7 +117,12 @@ export default function Certificates() {
     };
 
     return (
-        <section className="relative mx-auto max-w-5xl px-6 py-32 md:px-24">
+        <section id="certificates" className="relative mx-auto max-w-6xl px-6 py-28 md:px-10">
+            <div className="absolute left-0 top-20 -z-10 h-[320px] w-[320px] rounded-full bg-amber-500/10 blur-[120px] pointer-events-none" />
+            <div className="absolute right-0 bottom-10 -z-10 h-[280px] w-[280px] rounded-full bg-blue-500/8 blur-[120px] pointer-events-none" />
+            <div className="absolute inset-x-0 top-1/2 -z-10 h-32 -translate-y-1/2 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(245,158,11,0.1),transparent_0,transparent_20%),radial-gradient(circle_at_86%_72%,rgba(59,130,246,0.08),transparent_0,transparent_22%)] pointer-events-none" />
+            <div className="absolute inset-x-16 top-14 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -128,15 +131,21 @@ export default function Certificates() {
                 className="flex flex-col items-start"
             >
                 <div className="mb-16">
+                    <motion.p
+                        variants={cardVariants}
+                        className="text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-300"
+                    >
+                        Certificates
+                    </motion.p>
                     <motion.h2
                         variants={cardVariants}
-                        className="bg-gradient-to-r from-amber-200 via-white to-neutral-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl"
+                        className="mt-4 bg-gradient-to-r from-amber-200 via-white to-neutral-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl"
                     >
                         Earned, Not Given.
                     </motion.h2>
                     <motion.p
                         variants={cardVariants}
-                        className="mt-4 text-neutral-400 text-lg"
+                        className="mt-4 text-lg text-neutral-400"
                     >
                         Continuous learning, validated by industry leaders.
                     </motion.p>
@@ -150,6 +159,7 @@ export default function Certificates() {
                             className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.03] to-[#121212] p-6 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:bg-[#151515] hover:shadow-2xl ${cert.theme.border}`}
                         >
                             <div className={`absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br ${cert.theme.glow} blur-[40px] transition-opacity duration-700 opacity-0 group-hover:opacity-100`} />
+                            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-60" />
 
                             <div className="relative z-10 flex flex-col h-full">
                                 <div className="flex items-start justify-between mb-5">
@@ -157,7 +167,7 @@ export default function Certificates() {
                                         {cert.image ? (
                                             <Image
                                                 src={cert.image}
-                                                alt="Badge"
+                                                alt={`${cert.title} badge`}
                                                 width={36}
                                                 height={36}
                                                 className="object-contain"
@@ -189,6 +199,7 @@ export default function Certificates() {
                                         href={cert.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label={`Open certificate for ${cert.title}`}
                                         className="flex w-fit items-center gap-2 text-xs font-semibold text-neutral-500 transition-colors hover:text-white group-hover:underline"
                                     >
                                         View Certificate PDF <FiExternalLink size={14} />

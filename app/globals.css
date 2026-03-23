@@ -3,20 +3,48 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        --text: #f4f7fb;
+        --heading-font: "Avenir Next", "Segoe UI", sans-serif;
+        --body-font: "Satoshi", "Avenir Next", "Segoe UI", sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
-        @apply bg-[#121212] text-white antialiased selection:bg-white selection:text-black;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        @apply antialiased selection:bg-[#f97316] selection:text-black;
+        background:
+            radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 26%),
+            radial-gradient(circle at 85% 18%, rgba(14, 165, 233, 0.14), transparent 24%),
+            linear-gradient(180deg, #091018 0%, #0b0d10 48%, #090909 100%);
+        color: var(--text);
+        font-family: var(--body-font);
         overscroll-behavior: none;
-        /* Smooth scroll performance */
         -webkit-overflow-scrolling: touch;
+        min-height: 100vh;
     }
 
     *, *::before, *::after {
         box-sizing: border-box;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--heading-font);
+        letter-spacing: -0.04em;
+    }
+
+    section {
+        scroll-margin-top: 96px;
+    }
+
     img, video, canvas {
         max-width: 100%;
         display: block;
+    }
+
+    a {
+        text-decoration: none;
     }
 }

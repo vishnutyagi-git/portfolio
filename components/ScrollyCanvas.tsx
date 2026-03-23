@@ -13,6 +13,9 @@ export default function ScrollyCanvas() {
     const [images, setImages] = useState<HTMLImageElement[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const sizeRef = useRef({ width: 0, height: 0 });
+    const rafRef = useRef<number | null>(null);
+    const lastDrawnFrameRef = useRef(-1);
+    const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
 
     const getSize = () => {
         const el = stickyRef.current;
@@ -28,10 +31,8 @@ export default function ScrollyCanvas() {
         if (!el) return;
 
         const observer = new ResizeObserver(() => {
-            const size = getSize();
-            sizeRef.current = size;
             if (isLoaded) {
-                drawImage(Math.floor(currentIndex.get()));
+                scheduleDraw(Math.floor(currentIndex.get()), true);
             }
         });
 
@@ -73,37 +74,45 @@ export default function ScrollyCanvas() {
     });
 
     const currentIndex = useTransform(scrollYProgress, [0, 1], [0, FRAME_COUNT - 1]);
-
-    // ✏️ Face left/right: 0.3 = left, 0.5 = center, 0.7 = right
     const FACE_HORIZONTAL = 0.5;
 
-    const drawImage = (index: number) => {
+    const drawImage = (index: number, force = false) => {
         if (!canvasRef.current || images.length === 0) return;
+        if (!force && lastDrawnFrameRef.current === index) return;
 
         const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
+        const ctx = ctxRef.current ?? canvas.getContext('2d');
         if (!ctx) return;
+        ctxRef.current = ctx;
 
         const img = images[index];
         if (!img || !img.complete || img.naturalWidth === 0) return;
 
-        // ✅ Har baar fresh size lo — cached value pe depend mat karo
         const { width, height } = getSize();
         if (width === 0 || height === 0) return;
 
-        sizeRef.current = { width, height };
-
-        const dpr = window.devicePixelRatio || 1;
-
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        canvas.style.width = `${width}px`;
-        canvas.style.height = `${height}px`;
-
-        ctx.scale(dpr, dpr);
-        ctx.clearRect(0, 0, width, height);
-
         const isMobile = width < 768;
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        const nextCanvasWidth = Math.round(width * dpr);
+        const nextCanvasHeight = Math.round(height * dpr);
+        const sizeChanged =
+            sizeRef.current.width !== width ||
+            sizeRef.current.height !== height ||
+            canvas.width !== nextCanvasWidth ||
+            canvas.height !== nextCanvasHeight;
+
+        if (sizeChanged) {
+            canvas.width = nextCanvasWidth;
+            canvas.height = nextCanvasHeight;
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+            sizeRef.current = { width, height };
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        } else {
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        ctx.clearRect(0, 0, width, height);
 
         if (isMobile) {
             const targetAspect = width / height;
@@ -128,29 +137,46 @@ export default function ScrollyCanvas() {
 
             ctx.drawImage(img, 0, 0, img.width, img.height, centerShift_x, centerShift_y, newWidth, newHeight);
         }
+
+        lastDrawnFrameRef.current = index;
+    };
+
+    const scheduleDraw = (index: number, force = false) => {
+        if (rafRef.current) {
+            cancelAnimationFrame(rafRef.current);
+        }
+
+        rafRef.current = window.requestAnimationFrame(() => {
+            drawImage(index, force);
+            rafRef.current = null;
+        });
     };
 
     useEffect(() => {
         if (!isLoaded) return;
 
-        // ✅ Thoda wait karo taaki DOM settle ho jaye
-        const timeout = setTimeout(() => drawImage(0), 50);
+        const timeout = setTimeout(() => scheduleDraw(0, true), 50);
 
-        const handleResize = () => drawImage(Math.floor(currentIndex.get()));
+        const handleResize = () => scheduleDraw(Math.floor(currentIndex.get()), true);
         window.addEventListener('resize', handleResize);
 
         return () => {
             clearTimeout(timeout);
             window.removeEventListener('resize', handleResize);
+            if (rafRef.current) {
+                cancelAnimationFrame(rafRef.current);
+            }
         };
     }, [isLoaded]);
 
     useMotionValueEvent(currentIndex, 'change', (latest) => {
-        if (isLoaded) drawImage(Math.floor(latest));
+        if (isLoaded) {
+            scheduleDraw(Math.floor(latest));
+        }
     });
 
     return (
-        <div ref={containerRef} className="relative w-full bg-[#121212]" style={{ height: '500dvh' }}>
+        <div ref={containerRef} className="relative w-full bg-[#121212]" style={{ height: '400dvh' }}>
             <div
                 ref={stickyRef}
                 className="sticky top-0 w-full overflow-hidden bg-[#121212]"
