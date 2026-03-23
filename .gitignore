@@ -1,5 +1,7 @@
 node_modules
 .next
+.vscode
+.DS_Store
 .env
 dist
 build
